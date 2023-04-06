@@ -7,12 +7,13 @@ const init = {
     checkout: false
 }
 const reducer = (state, action) => {
+    console.log(state);
     switch (action.type) {
         case "ADD_ITEM":
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
                 state.selectedItems.push({
                     ...action.payload,
-                    quntity: 1
+                    quantity: 1
                 })
             }
             return {
@@ -27,13 +28,13 @@ const reducer = (state, action) => {
             }
         case "INCREASE":
             const indexI = state.selectedItems.findIndex(item => item.id === action.payload.id);
-            state.selectedItems[indexI].quntity++;
+            state.selectedItems[indexI].quantity++;
             return {
                 ...state,
             }
         case "DECREASE":
             const indexD = state.selectedItems.findIndex(item => item.id === action.payload.id);
-            state.selectedItems[indexD].quntity--;
+            state.selectedItems[indexD].quantity--;
             return {
                 ...state,
             }
