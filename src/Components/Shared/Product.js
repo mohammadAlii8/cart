@@ -5,13 +5,13 @@ import { Link } from "react-router-dom"
 import { shorten, isInCart, quantityCount } from '../../helper/functions';
 
 // CONTEXT
-import { cartContext } from '../../Context/CartContextProvider';
+import { CartContext } from '../../Context/CartContextProvider';
 
 // ICONS
 import trashIcon from "../../assets/icons/trash.svg"
 const Product = ({ productData }) => {
 
-    const { state, dispatch } = useContext(cartContext)
+    const { state, dispatch } = useContext(CartContext)
 
     return (
         <div>
