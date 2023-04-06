@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+
 const init = {
     selectedItems: [],
     itemsCounter: 0,
@@ -11,7 +12,7 @@ const reducer = (state, action) => {
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
                 state.selectedItems.push({
                     ...action.payload,
-                    quantity: 1,
+                    quntity: 1
                 })
             }
             return {
@@ -19,10 +20,10 @@ const reducer = (state, action) => {
                 selectedItems: [...state.selectedItems]
             }
         case "REMOVE_ITEM":
-            const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.id);
+            const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.id)
             return {
                 ...state,
-                selectedItems: [...newSelectedItems]
+                selectedItems: [...newSelectedItems],
             }
     }
 }
