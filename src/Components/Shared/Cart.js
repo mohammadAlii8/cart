@@ -9,7 +9,6 @@ import trashIcon from "../../assets/icons/trash.svg";
 import styles from "./Cart.module.css"
 
 const Cart = (props) => {
-
     const { dispatch } = useContext(CartContext);
     const { image, title, price, quantity } = props.data;
 
